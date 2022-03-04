@@ -18,6 +18,10 @@ const config = {
 			precompress: false
 		}),
 
+		paths: {
+			base: dev ? '' : '/home',
+		},
+
 		// Override http methods in the Todo forms
 		methodOverride: {
 			allowed: ['PATCH', 'DELETE']
