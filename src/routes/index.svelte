@@ -7,14 +7,18 @@ import "$lib/titleScreen.css"
 import parkRangersImage from "$lib/assets/games/park rangers/headerS.png"
 import concordAssaultImage from "$lib/assets/games/concord assault/Screenshot_32.png"
 import rangeImage from "$lib/assets/games/range/range.png"
+import fighterImage from "$lib/assets/games/fighter.jpg"
 // import { BrandTwitter, BrandPatreon, BrandDiscord, BrandYoutube, Mail } from "tabler-icons-svelte"
 import BrandTwitter from "tabler-icons-svelte/icons/BrandTwitter.svelte"
 import BrandPatreon from "tabler-icons-svelte/icons/BrandPatreon.svelte"
 import BrandDiscord from "tabler-icons-svelte/icons/BrandDiscord.svelte"
 import BrandYoutube from "tabler-icons-svelte/icons/BrandYoutube.svelte"
+import Shirt from "tabler-icons-svelte/icons/Shirt.svelte"
 import Mail from "tabler-icons-svelte/icons/Mail.svelte"
+import Heart from "tabler-icons-svelte/icons/Heart.svelte"
 import { onMount } from "svelte";
 import Logo from "$lib/logo/Logo.svelte";
+import ToggleTheme from "$lib/ToggleTheme.svelte"
 
 let scrollY = 0
 let viewportHeight = 1
@@ -35,7 +39,10 @@ var games = [
 		title: "Park Rangers of The Undead",
 		url: "./games/park ranger"
 	},
-	{},{},
+	{},
+	{
+		image: fighterImage
+	},
 	{
 		image: concordAssaultImage,
 		title: "Concord Assault",
@@ -57,6 +64,7 @@ var games = [
 		<a href="#about">About</a>
 		<a href="#games">Games</a>
 		<a href="#contact">Contact</a>
+		<ToggleTheme/>
 	</div>
 	<div class="logo-container | horizontal main-center second-center">
 		<Logo showTop showBottom/>
@@ -73,7 +81,7 @@ var games = [
 
 	<div class="flex-center padded">
 		<div class="vertical">
-			<h2>Building games. With love <span class="heart">🫀</span></h2>
+			<h2>Building games. With love <span class="heart"><Heart color="var(--main-color)"/></span></h2>
 			<p class="big-text limited-width">
 				We are a small, international indie game development company.
 				Our mission is to make games that are enjoyable and appealing to a wide audience.
@@ -144,6 +152,10 @@ var games = [
 			<Mail/>
 			<p>Mail</p>
 		</a>
+		<a class="contact" href="https://www.redbubble.com/people/NStudios/explore" target="_blank">
+			<Shirt/>
+			<p>Merch</p>
+		</a>
 	</div>
 </section>
 
@@ -174,7 +186,7 @@ var games = [
 		.games-grid .game {
 			grid-column-end: span var(--cols);
 			grid-row-end: span var(--rows);
-			background: #FFF;
+			background: var(--main-color);
 			background-size: cover;
 			background-position: center center;
 			background-repeat: no-repeat;
@@ -246,7 +258,7 @@ var games = [
 				transform: scale(2);
 				transition: .05s;
 			}
-@media (max-width: 800px) {
+@media (max-width: 900px) {
 	.contacts {
 		display: grid;
 		grid-template-columns: repeat(3, auto);

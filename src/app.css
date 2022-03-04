@@ -10,10 +10,20 @@
 	--g: 2rem;
 	--g2: 4rem;
 
-	--main-color: #09d412;
+	--main-color: #04ba0a;
 	--text-color: #0c371b;
+	--back: white;
+	--back-contrast: #c5ffb3;
+
 
 	color: var(--text-color);
+	background-color: var(--back);
+}
+
+:root.dark {
+	--text-color: white;
+	--back: black;
+	--back-contrast: #193311;
 }
 
 .flex,
@@ -79,14 +89,14 @@
 	grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
 	}
 	.sidebar > :first-child {
-		background-color: white;
+		background-color: var(--back);
 	}
 	.sidebar > :last-child {
 		padding-top: var(--g2);
 		padding-bottom: var(--g2);
 		background-image: linear-gradient(
 			to right,
-			#c5ffb3,
+			var(--back-contrast),
 			#c5ffb300
 		);
 	}
