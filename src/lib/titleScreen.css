@@ -26,10 +26,10 @@
 				*/
 			justify-content: flex-start;
 			}
-			.title-screen .menu a:first-child {
+			.title-screen .menu > :first-child {
 				margin-left: auto
 			}
-			.title-screen .menu a:last-child {
+			.title-screen .menu > :last-child {
 				margin-right: auto
 			}
 }
