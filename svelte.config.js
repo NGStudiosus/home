@@ -18,9 +18,10 @@ const config = {
 			precompress: false
 		}),
 
-		paths: {
-			base: dev ? '' : '/home',
-		},
+		// This is needed for github pages
+		// paths: {
+		// 	base: dev ? '' : '/home',
+		// },
 
 		// Override http methods in the Todo forms
 		methodOverride: {

@@ -85,7 +85,7 @@ var games = [
 			<p class="big-text limited-width">
 				We are a small, international indie game development company.
 				Our mission is to make games that are enjoyable and appealing to a wide audience.
-				We strife to shape our products for and with our small but steadily growing community.
+				We strive to shape our products for and with our small but steadily growing community.
 			</p>
 		</div>
 	</div>
