@@ -1,5 +1,4 @@
 <script lang="ts">
-import logo from "$lib/assets/img/logo.png"
 import { onMount } from "svelte";
 
 export let showTop = false
@@ -29,11 +28,11 @@ onMount(() => {
 />
 
 <img
-	class="logo" src={logo} alt=""
+	class="logo" src="/img/logo.png" alt=""
 	class:scrolled={logoVisibility != 1}
 	style={`opacity: ${logoVisibility}`}
 >
-<img class="logo back" src={logo} alt="">
+<img class="logo back" src="/img/logo.png" alt="">
 
 <style>
 img.logo {

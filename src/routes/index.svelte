@@ -4,10 +4,6 @@
 
 <script>
 import "$lib/titleScreen.css"
-import parkRangersImage from "$lib/assets/games/park rangers/headerS.png"
-import concordAssaultImage from "$lib/assets/games/concord assault/Screenshot_32.png"
-import rangeImage from "$lib/assets/games/range/range.png"
-import fighterImage from "$lib/assets/games/fighter.jpg"
 // import { BrandTwitter, BrandPatreon, BrandDiscord, BrandYoutube, Mail } from "tabler-icons-svelte"
 import BrandTwitter from "tabler-icons-svelte/icons/BrandTwitter.svelte"
 import BrandPatreon from "tabler-icons-svelte/icons/BrandPatreon.svelte"
@@ -35,22 +31,22 @@ onMount(() => {
 var games = [
 	{
 		rows: 2, cols: 1,
-		image: parkRangersImage,
+		image: "/img/games/park rangers/headerS.png",
 		title: "Park Rangers of The Undead",
 		url: "./games/park ranger"
 	},
 	{},
 	{
-		image: fighterImage
+		image: "/img/games/concord assault/Screenshot_32.png"
 	},
 	{
-		image: concordAssaultImage,
+		image: "/img/games/range/range.png",
 		title: "Concord Assault",
 		url: "./games/concord assault"
 	},
 	{},{},{},
 	{
-		image: rangeImage,
+		image: "/img/games/fighter.jpg",
 	},
 ]
 </script>

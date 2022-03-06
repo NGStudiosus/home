@@ -1,7 +1,6 @@
 <script lang="ts">
 import '../app.css';
-import { theme } from "$lib/ThemeController";
-import { onMount } from "svelte";
+import { } from "$lib/ThemeController";
 </script>
 
 <svelte:head>
