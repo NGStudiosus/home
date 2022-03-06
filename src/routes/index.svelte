@@ -33,16 +33,16 @@ var games = [
 		rows: 2, cols: 1,
 		image: "/img/games/park rangers/headerS.png",
 		title: "Park Rangers of The Undead",
-		url: "./games/park ranger"
+		url: "https://store.steampowered.com/app/1701760"
 	},
 	{},
 	{
-		image: "/img/games/concord assault/Screenshot_32.png"
+		image: "/img/games/range/range.png"
 	},
 	{
-		image: "/img/games/range/range.png",
+		image: "/img/games/concord assault/Screenshot_32.png",
 		title: "Concord Assault",
-		url: "./games/concord assault"
+		url: "https://nightingale-studios.itch.io/concord-assault"
 	},
 	{},{},{},
 	{
@@ -106,7 +106,7 @@ var games = [
 						background-image: url("${game.image ?? ""}");
 				`}>
 					{#if game.url}
-						<a class="title" href={game.url ?? ""}>
+						<a class="title" href={game.url ?? ""} target="_blank">
 							<h5>{game.title ?? "to be announced"}</h5>
 						</a>
 					{:else}
