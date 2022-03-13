@@ -9,46 +9,14 @@ import BrandTwitter from "tabler-icons-svelte/icons/BrandTwitter.svelte"
 import BrandPatreon from "tabler-icons-svelte/icons/BrandPatreon.svelte"
 import BrandDiscord from "tabler-icons-svelte/icons/BrandDiscord.svelte"
 import BrandYoutube from "tabler-icons-svelte/icons/BrandYoutube.svelte"
+import BrandFacebook from "tabler-icons-svelte/icons/BrandFacebook.svelte"
+import BrandPaypal from "tabler-icons-svelte/icons/BrandPaypal.svelte"
 import Shirt from "tabler-icons-svelte/icons/Shirt.svelte"
 import Mail from "tabler-icons-svelte/icons/Mail.svelte"
 import Heart from "tabler-icons-svelte/icons/Heart.svelte"
-import { onMount } from "svelte";
 import Logo from "$lib/logo/Logo.svelte";
 import ToggleTheme from "$lib/ToggleTheme.svelte"
-
-let scrollY = 0
-let viewportHeight = 1
-let totalScroll = 1
-let logoVisibility = 0
-$: logoVisibility =
-	Math.max(0, 1 - scrollY / (viewportHeight/2)) +
-	Math.max(0, 1 + (scrollY - totalScroll) / (viewportHeight/2))
-
-onMount(() => {
-	totalScroll = document.body.scrollHeight - viewportHeight
-})
-
-var games = [
-	{
-		rows: 2, cols: 1,
-		image: "/img/games/park rangers/headerS.png",
-		title: "Park Rangers of The Undead",
-		url: "https://store.steampowered.com/app/1701760"
-	},
-	{},
-	{
-		image: "/img/games/range/range.png"
-	},
-	{
-		image: "/img/games/concord assault/Screenshot_32.png",
-		title: "Concord Assault",
-		url: "https://nightingale-studios.itch.io/concord-assault"
-	},
-	{},{},{},
-	{
-		image: "/img/games/fighter.jpg",
-	},
-]
+import Game from "$lib/Game.svelte"
 </script>
 
 <svelte:head>
@@ -97,63 +65,114 @@ var games = [
 
 	<div class="games-grid-container">
 		<div class="games-grid">
-			{#each games as game}
-				<div
-					class="game"
-					style={`
-						--cols:${game.cols ?? 1};
-						--rows:${game.rows ?? 1};
-						background-image: url("${game.image ?? ""}");
-				`}>
-					{#if game.url}
-						<a class="title" href={game.url ?? ""} target="_blank">
-							<h5>{game.title ?? "to be announced"}</h5>
-						</a>
-					{:else}
-						<div class="title">
-							<h5>{game.title ?? "to be announced"}</h5>
-						</div>
-					{/if}
-				</div>
-			{/each}
+			<Game
+				cols={1} rows={2}
+				title="Park Rangers of The Undead"
+				links={{
+					steam: "https://store.steampowered.com/app/1701760"
+				}}
+				image="/img/games/park rangers/headerS.png"
+			></Game>
+			<Game
+				cols={2}
+				title="Birth of the Alliance"
+				image="/img/games/bota/dreadnaught.jpg"
+				paypal={{
+					on: "Base game or founders",
+					encrypted: "-----BEGIN PKCS7-----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-----END PKCS7-----",
+					button: "Preorder",
+					options: {
+						"Base game": "Base game $9.99 USD",
+						"Founders edition": "Founders edition $19.99 USD",
+					}
+				}}
+			/>
+			<Game
+				image="/img/games/platformer/player.png"
+			/>
+			<Game
+				title="Concord Assault"
+				links={{
+					itchio: "https://nightingale-studios.itch.io/concord-assault"
+				}}
+				image="/img/games/concord assault/Screenshot_32.png"
+			/>
+			<Game
+				image="/img/games/tobias.png"
+			/>
+			<Game
+				title="The Range"
+				image="/img/games/range/range.png"
+			/>
+			<Game
+				title="Nightingale: Expanse"
+				image="/img/games/fighter.jpg"
+			/>
 		</div>
 	</div>
 </section>
 
-<section id="contact" class="full-screen-shrinkable sidebar">
-	<div class="flex-center">
-		<div class="sticky-top sticky-bottom">
-			come
-			<h2>Aboard</h2>
+<div class="full-screen-shrinkable vertical main-center no-gap grow">
+	<section id="contact" class="sidebar">
+		<div class="flex-center">
+			<div class="sticky-top sticky-bottom">
+				come
+				<h2>Aboard</h2>
+			</div>
 		</div>
-	</div>
-	<div class="contacts | flex-center padded">
-		<a class="contact" href="https://twitter.com/NStudiosus" target="_blank">
-			<BrandTwitter/>
-			<p>Twitter</p>
-		</a>
-		<a class="contact" href="https://www.patreon.com/Nightingale_studios" target="_blank">
-			<BrandPatreon/>
-			<p>Patreon</p>
-		</a>
-		<a class="contact" href="https://discord.gg/FbhyGGtgYn" target="_blank">
-			<BrandDiscord/>
-			<p>Discord</p>
-		</a>
-		<a class="contact" href="https://www.youtube.com/channel/UC4WhY6A6_quZvWPYkcp1FqA" target="_blank">
-			<BrandYoutube/>
-			<p>Youtube</p>
-		</a>
-		<a class="contact" href="mailto:ngstudiosus@gmail.com" target="_blank">
-			<Mail/>
-			<p>Mail</p>
-		</a>
-		<a class="contact" href="https://www.redbubble.com/people/NStudios/explore" target="_blank">
-			<Shirt/>
-			<p>Merch</p>
-		</a>
-	</div>
-</section>
+		<div class="contacts | flex-center padded">
+			<a class="contact" href="https://twitter.com/NStudiosus" target="_blank">
+				<BrandTwitter/>
+				<p>Twitter</p>
+			</a>
+			<a class="contact" href="https://www.facebook.com/nightingalestudiosus" target="_blank">
+				<BrandFacebook/>
+				<p>Facebook</p>
+			</a>
+			<a class="contact" href="https://discord.gg/FbhyGGtgYn" target="_blank">
+				<BrandDiscord/>
+				<p>Discord</p>
+			</a>
+			<a class="contact" href="https://www.youtube.com/channel/UC4WhY6A6_quZvWPYkcp1FqA" target="_blank">
+				<BrandYoutube/>
+				<p>Youtube</p>
+			</a>
+			<a class="contact" href="mailto:ngstudiosus@gmail.com" target="_blank">
+				<Mail/>
+				<p>Mail</p>
+			</a>
+			<a class="contact" href="https://www.redbubble.com/people/NStudios/explore" target="_blank">
+				<Shirt/>
+				<p>Merch</p>
+			</a>
+		</div>
+	</section>
+
+	<section class="sidebar">
+		<div class="flex-center">
+			<div class="sticky-top sticky-bottom">
+				<h2>Support</h2>
+				us
+			</div>
+		</div>
+		<div class="contacts | flex-center padded">
+			<a class="contact" href="https://www.patreon.com/Nightingale_studios" target="_blank">
+				<BrandPatreon/>
+				<p>Patreon</p>
+			</a>
+			<form style="display: contents" action="https://www.paypal.com/donate" method="post" target="_top">
+				<input type="hidden" name="business" value="V4WNH5VTRV3M2" />
+				<input type="hidden" name="no_recurring" value="0" />
+				<input type="hidden" name="item_name" value="Nightingale Studios Development" />
+				<input type="hidden" name="currency_code" value="USD" />
+				<button class="contact | btn clear">
+					<BrandPaypal/>
+					<p>PayPal</p>
+				</button>
+			</form>
+		</div>
+	</section>
+</div>
 
 <section class="full-screen sidebar">
 	<div class="flex-center">
@@ -173,50 +192,13 @@ var games = [
 	.games-grid {
 		grid-row: 2;
 		display: grid;
+		grid-auto-flow: dense;
 		grid-template-columns: repeat(3, 1fr);
 		grid-template-rows: repeat(3, 1fr);
 		padding: var(--g2);
 		gap: var(--g);
 		aspect-ratio: 1/1;
 		}
-		.games-grid .game {
-			grid-column-end: span var(--cols);
-			grid-row-end: span var(--rows);
-			background: var(--main-color);
-			background-size: cover;
-			background-position: center center;
-			background-repeat: no-repeat;
-			transition: .2s;
-			}
-			.games-grid .game .title {
-				width: 100%;
-				height: 100%;
-				display: flex;
-				justify-content: center;
-				align-items: center;
-
-				text-decoration: none;
-
-				background-color: #0005;
-
-				transition: .2s;
-				pointer-events: none;
-				opacity: 0;
-				}
-				.games-grid .game .title {
-					padding: var(--g);
-					font-size: 1.4rem;
-					color: white;
-					text-shadow: 0 2px #0008;
-				}
-			/* :HOVER */
-			.games-grid .game:hover {
-				/* background-size: 120%; */
-				}
-				.games-grid .game:hover .title {
-					pointer-events: all;
-					opacity: 1;
-				}
 @media (max-width: 1100px) {
 	.games-grid {
 		grid-template-columns: repeat(2, 1fr);
@@ -233,7 +215,7 @@ var games = [
 .contacts {
 	gap: var(--g);
 	}
-	a.contact {
+	.contacts .contact {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
@@ -242,15 +224,16 @@ var games = [
 		color: var(--text-color);
 		font-size: 1.2rem;
 		text-decoration: none;
+		cursor: pointer;
 		transition: .2s;
-		} a.contact:hover {
+		} .contacts .contact:hover {
 			color: var(--main-color);
 			text-shadow: #0008;
 			transition: .05s;
 			}
-		a.contact :global(.icon) {
+		.contacts .contact :global(.icon) {
 			transition: .2s;
-			} a.contact:hover :global(.icon) {
+			} .contacts .contact:hover :global(.icon) {
 				transform: scale(2);
 				transition: .05s;
 			}

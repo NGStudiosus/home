@@ -1,6 +1,5 @@
 <script lang="ts">
 import '../app.css';
-import { } from "$lib/ThemeController";
 </script>
 
 <svelte:head>

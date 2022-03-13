@@ -1,3 +1,4 @@
+import { browser } from "$app/env"
 import { writable } from "svelte/store"
 
 export enum Theme {
@@ -9,25 +10,25 @@ const localStorageKey = "color theme"
 const defaultTheme = Theme.Light
 
 function getAgentTheme() {
-	if (typeof window === "undefined") return defaultTheme
+	if (!browser) return defaultTheme
 	const media = window.matchMedia("(prefers-color-scheme: dark)")
 	return media.matches ? Theme.Dark : Theme.Light
 }
 
 function loadTheme() {
-	if (typeof localStorage === "undefined") return null
+	if (!browser) return null
 	const storedTheme = localStorage.getItem(localStorageKey)
 	const theme = Object.values(Theme).find(t => t == storedTheme) ?? null
 	return theme
 }
 
 function saveTheme(theme: Theme) {
-	if (typeof localStorage === "undefined") return
+	if (!browser) return
 	localStorage.setItem(localStorageKey, theme)
 }
 
 function applyTheme(theme: Theme) {
-	if (typeof document === "undefined") return
+	if (!browser) return
 	document.documentElement.classList.toggle("dark", theme == Theme.Dark)
 }
 
@@ -46,7 +47,7 @@ export function toggleTheme() {
 }
 
 export const theme = writable(getTheme(), set => {
-	if (typeof window === "undefined") return
+	if (!browser) return
 	applyTheme(getTheme())
 	window.matchMedia("(prefers-color-scheme: dark)")
 	.addEventListener("change", e => {
