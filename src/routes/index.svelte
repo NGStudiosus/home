@@ -88,6 +88,7 @@ import Game from "$lib/Game.svelte"
 				}}
 			/>
 			<Game
+				title="Lednatha Combat Academy"
 				image="/img/games/platformer/player.png"
 			/>
 			<Game
@@ -98,6 +99,7 @@ import Game from "$lib/Game.svelte"
 				image="/img/games/concord assault/Screenshot_32.png"
 			/>
 			<Game
+				title="Nightingale: Tales of The Fleet"
 				image="/img/games/tobias.png"
 			/>
 			<Game
