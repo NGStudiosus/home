@@ -63,7 +63,7 @@ import Game from "$lib/Game.svelte"
 		</div>
 	</div>
 
-	<div class="games-grid-container">
+	<!-- <div class="games-grid-container"> -->
 		<div class="games-grid">
 			<Game
 				cols={1} rows={2}
@@ -76,7 +76,7 @@ import Game from "$lib/Game.svelte"
 			<Game
 				cols={2}
 				title="Birth of the Alliance"
-				image="/img/games/bota/dreadnaught.jpg"
+				image="/img/games/bota/header-1000.jpg"
 				paypal={{
 					on: "Base game or founders",
 					encrypted: "-----BEGIN PKCS7-----MIIH6QYJKoZIhvcNAQcEoIIH2jCCB9YCAQExggEwMIIBLAIBADCBlDCBjjELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtQYXlQYWwgSW5jLjETMBEGA1UECxQKbGl2ZV9jZXJ0czERMA8GA1UEAxQIbGl2ZV9hcGkxHDAaBgkqhkiG9w0BCQEWDXJlQHBheXBhbC5jb20CAQAwDQYJKoZIhvcNAQEBBQAEgYCdXNrAFuWEyS9y4sU2zWOAAm6LLyCTL+E7KV0kF8xYN7pqtS8GwRz02Da0BS7tLrUD7JrHckrwMV3dwo36QA5q0vXr9NCGSi5Xt1ni5RplRzj61Tka+XJgp4sJEdkxybfcesPfDIGNzyuXf2tijmEfJfWDAw3XAZraDr2uLHirlDELMAkGBSsOAwIaBQAwggFlBgkqhkiG9w0BBwEwFAYIKoZIhvcNAwcECOQs+5nW3ZLZgIIBQDz6fAaj/ELktoAEPFedqW6pe1rvSbQioz/d4ucsHm/AZoIOv8Jf7IwTXdh10AFZkJYBWJ4a5+4YdTQiLnmfV0r57VWl2TIfNr0wTg8LwkzjjUE23xWKwhfkzfaqcJyTSZrCVwJwqikSiYrS9VrnVmmMeBbCvzqTImx/hDk0Hddl0fJy/+Cy2DT04cii0Tk73QmJAcKy/TO9A1ERMe2LFD7WDvzNPOntxWXW78XDgFEkmPKMghmeh6yt2inzK3BZoNvtNvt0TeKxX3D5TqRGsJE0rqdFRW5jj5EzxrZSUvfL/RDuySIBQ1D7pw+rJsDENrRNIe2FNy81ziJhCmKyGu+3NBxh+qEfzjg/IizMMkwLeymgwE8aYM1UxUnkfFhQC3PmwcoEy6qgOkekkkmgz3NAezggko4M8kebLDbLfFNeoIIDhzCCA4MwggLsoAMCAQICAQAwDQYJKoZIhvcNAQEFBQAwgY4xCzAJBgNVBAYTAlVTMQswCQYDVQQIEwJDQTEWMBQGA1UEBxMNTW91bnRhaW4gVmlldzEUMBIGA1UEChMLUGF5UGFsIEluYy4xEzARBgNVBAsUCmxpdmVfY2VydHMxETAPBgNVBAMUCGxpdmVfYXBpMRwwGgYJKoZIhvcNAQkBFg1yZUBwYXlwYWwuY29tMB4XDTA0MDIxMzEwMTMxNVoXDTM1MDIxMzEwMTMxNVowgY4xCzAJBgNVBAYTAlVTMQswCQYDVQQIEwJDQTEWMBQGA1UEBxMNTW91bnRhaW4gVmlldzEUMBIGA1UEChMLUGF5UGFsIEluYy4xEzARBgNVBAsUCmxpdmVfY2VydHMxETAPBgNVBAMUCGxpdmVfYXBpMRwwGgYJKoZIhvcNAQkBFg1yZUBwYXlwYWwuY29tMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDBR07d/ETMS1ycjtkpkvjXZe9k+6CieLuLsPumsJ7QC1odNz3sJiCbs2wC0nLE0uLGaEtXynIgRqIddYCHx88pb5HTXv4SZeuv0Rqq4+axW9PLAAATU8w04qqjaSXgbGLP3NmohqM6bV9kZZwZLR/klDaQGo1u9uDb9lr4Yn+rBQIDAQABo4HuMIHrMB0GA1UdDgQWBBSWn3y7xm8XvVk/UtcKG+wQ1mSUazCBuwYDVR0jBIGzMIGwgBSWn3y7xm8XvVk/UtcKG+wQ1mSUa6GBlKSBkTCBjjELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtQYXlQYWwgSW5jLjETMBEGA1UECxQKbGl2ZV9jZXJ0czERMA8GA1UEAxQIbGl2ZV9hcGkxHDAaBgkqhkiG9w0BCQEWDXJlQHBheXBhbC5jb22CAQAwDAYDVR0TBAUwAwEB/zANBgkqhkiG9w0BAQUFAAOBgQCBXzpWmoBa5e9fo6ujionW1hUhPkOBakTr3YCDjbYfvJEiv/2P+IobhOGJr85+XHhN0v4gUkEDI8r2/rNk1m0GA8HKddvTjyGw/XqXa+LSTlDYkqI8OwR8GEYj4efEtcRpRYBxV8KxAW93YDWzFGvruKnnLbDAF6VR5w/cCMn5hzGCAZowggGWAgEBMIGUMIGOMQswCQYDVQQGEwJVUzELMAkGA1UECBMCQ0ExFjAUBgNVBAcTDU1vdW50YWluIFZpZXcxFDASBgNVBAoTC1BheVBhbCBJbmMuMRMwEQYDVQQLFApsaXZlX2NlcnRzMREwDwYDVQQDFAhsaXZlX2FwaTEcMBoGCSqGSIb3DQEJARYNcmVAcGF5cGFsLmNvbQIBADAJBgUrDgMCGgUAoF0wGAYJKoZIhvcNAQkDMQsGCSqGSIb3DQEHATAcBgkqhkiG9w0BCQUxDxcNMjIwMzEzMTQxMjIxWjAjBgkqhkiG9w0BCQQxFgQU9QmrgLKk+p4bkgcss6E2ijQECSYwDQYJKoZIhvcNAQEBBQAEgYCzNVt3Lh01g1ovt5xWagVQd4neZ+CCnFBesIcK79hnliOP0ZTXa0pGg+nnwYJ6n2CT0d59M36z3PjX68n5JcrrWvLvw6sNwb/BWZnopoKMlacgA7rsP2UtehC6ZCknAa6Mki9Y8/cQ7xYwpWMnNQuA1ILF/RH9U53+k9x4CNhb3A==-----END PKCS7-----",
@@ -100,7 +100,7 @@ import Game from "$lib/Game.svelte"
 			/>
 			<Game
 				title="Nightingale: Tales of The Fleet"
-				image="/img/games/tobias.png"
+				image="/img/games/tobias-1000.png"
 			/>
 			<Game
 				title="The Range"
@@ -111,7 +111,7 @@ import Game from "$lib/Game.svelte"
 				image="/img/games/fighter.jpg"
 			/>
 		</div>
-	</div>
+	<!-- </div> -->
 </section>
 
 <div class="full-screen-shrinkable vertical main-center no-gap grow">
@@ -187,20 +187,14 @@ import Game from "$lib/Game.svelte"
 </section>
 
 <style>
-.games-grid-container {
+.games-grid {
 	display: grid;
-	grid-template-rows: 1fr auto 1fr;
+	grid-auto-flow: dense;
+	grid-template-columns: repeat(3, 1fr);
+	grid-auto-rows: 1fr;
+	padding: var(--g2);
+	gap: var(--g);
 	}
-	.games-grid {
-		grid-row: 2;
-		display: grid;
-		grid-auto-flow: dense;
-		grid-template-columns: repeat(3, 1fr);
-		grid-template-rows: repeat(3, 1fr);
-		padding: var(--g2);
-		gap: var(--g);
-		aspect-ratio: 1/1;
-		}
 @media (max-width: 1100px) {
 	.games-grid {
 		grid-template-columns: repeat(2, 1fr);
@@ -228,14 +222,14 @@ import Game from "$lib/Game.svelte"
 		text-decoration: none;
 		cursor: pointer;
 		transition: .2s;
-		} .contacts .contact:hover {
+		} .contacts .contact:is(:hover, :focus) {
 			color: var(--main-color);
 			text-shadow: #0008;
 			transition: .05s;
 			}
 		.contacts .contact :global(.icon) {
 			transition: .2s;
-			} .contacts .contact:hover :global(.icon) {
+			} .contacts .contact:is(:hover, :focus) :global(.icon) {
 				transform: scale(2);
 				transition: .05s;
 			}

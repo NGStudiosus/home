@@ -44,6 +44,7 @@ $: isNarrow = width < 350
 	style={`
 		--cols:${cols};
 		--rows:${rows};
+		--width: ${width}px;
 		background-image: url("${image}");
 	`}
 >
@@ -89,7 +90,8 @@ $: isNarrow = width < 350
 	background-size: cover;
 	background-position: center center;
 	background-repeat: no-repeat;
-	transition: .2s;
+	border-radius: 4px;
+	overflow: clip;
 	}
 	.game .title {
 		width: 100%;
@@ -104,6 +106,7 @@ $: isNarrow = width < 350
 		text-decoration: none;
 
 		background-color: #0005;
+		filter: drop-shadow(0 2px #0008);
 
 		transition: .2s;
 		pointer-events: none;
@@ -113,16 +116,23 @@ $: isNarrow = width < 350
 			font-size: 1.4rem;
 			color: white;
 			text-align: center;
-			text-shadow: 0 2px #0008;
 		}
 	/* :HOVER */
-	.game:hover {
-		/* background-size: 120%; */
+	.game:is(:hover, :focus-within) .title {
+		pointer-events: all;
+		opacity: 1;
+		} @media (hover: none) {
+			.game .title {
+				pointer-events: all;
+				opacity: 1;
+			}
 		}
-		.game:hover .title {
-			pointer-events: all;
-			opacity: 1;
+@media (max-width: 600px) {
+	.game {
+		min-height: var(--width);
+	}
 }
+
 
 .paypal {
 	color: white;
@@ -133,7 +143,6 @@ $: isNarrow = width < 350
 	}
 	.paypal .selector {
 		display: flex;
-		gap: var(--g-4);
 		} .narrow .paypal .selector {
 			flex-direction: column;
 		}
@@ -144,14 +153,16 @@ $: isNarrow = width < 350
 		color: white;
 		font: inherit;
 		text-align: center;
-		text-shadow: 0 2px #0008;
 
 		background: none;
 		border: 2px solid white;
-		border-radius: 50px 4px 4px 50px;
+		border-right-width: 0;
+		border-radius: 50px 0 0 50px;
 		cursor: pointer;
 		} .narrow .paypal select {
-			border-radius: 30px 30px 4px 4px;
+			border-right-width: 2px;
+			border-bottom-width: 0;
+			border-radius: 30px 30px 0 0;
 		}
 	.paypal button {
 		padding: var(--g-2) var(--g-4);
@@ -159,14 +170,13 @@ $: isNarrow = width < 350
 		color: white;
 		font: inherit;
 		text-align: center;
-		text-shadow: 0 2px #0008;
 
 		background: none;
 		border: 2px solid white;
-		border-radius: 4px 50px 50px 4px;
+		border-radius: 0 50px 50px 0;
 		cursor: pointer;
 		} .narrow .paypal button {
-			border-radius: 4px 4px 30px 30px;
+			border-radius: 0 0 30px 30px;
 		}
 
 .link {
@@ -178,7 +188,6 @@ $: isNarrow = width < 350
 
 	color: white;
 	text-decoration: none;
-	text-shadow: 0 2px #0008;
 
 	border: 2px solid white;
 	border-radius: 50% 50% 4px 4px;

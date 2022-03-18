@@ -6,7 +6,9 @@ export let showBottom = false
 
 let scrollY = 0
 let viewportHeight = 1
-let totalScroll = 1
+let bodyHeight = 1
+$: totalScroll = bodyHeight - viewportHeight
+
 let logoVisibility = 0
 $: {
 	logoVisibility = 0
@@ -16,15 +18,16 @@ $: {
 		logoVisibility +=  Math.max(0, 1 + (scrollY - totalScroll) / (viewportHeight/2))
 }
 
-onMount(() => {
-	totalScroll = document.body.scrollHeight - viewportHeight
-})
+const updateBodyHeight = () => bodyHeight = document.body.scrollHeight
+
+onMount(updateBodyHeight)
 </script>
 
 <svelte:window
 	bind:scrollY={scrollY}
 	bind:innerHeight={viewportHeight}
-	on:resize={()=>totalScroll = document.body.scrollHeight - viewportHeight}
+	on:resize={updateBodyHeight}
+	on:scroll={updateBodyHeight}
 />
 
 <img
@@ -35,13 +38,13 @@ onMount(() => {
 <img class="logo back" src="/img/logo.png" alt="">
 
 <style>
-img.logo {
+.logo {
 	max-width: 100%;
 	position: fixed;
-	} img.logo.scrolled {
+	} .logo.scrolled {
 		pointer-events: none;
 	}
-	img.logo.back {
+	.logo.back {
 		opacity: 0.3;
 		pointer-events: none;
 		z-index: -1;

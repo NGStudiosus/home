@@ -8,6 +8,7 @@ import { Theme, theme, toggleTheme } from "./ThemeController"
 	on:click={toggleTheme}
 	class:sun={$theme == Theme.Light}
 	class:moon={$theme == Theme.Dark}
+	aria-label={`Switch to ${$theme == Theme.Light ? "dark" : "light"} mode`}
 >
 	{#if $theme == Theme.Light}
 		<Sun/>
