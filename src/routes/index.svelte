@@ -11,6 +11,7 @@ import BrandDiscord from "tabler-icons-svelte/icons/BrandDiscord.svelte"
 import BrandYoutube from "tabler-icons-svelte/icons/BrandYoutube.svelte"
 import BrandFacebook from "tabler-icons-svelte/icons/BrandFacebook.svelte"
 import BrandPaypal from "tabler-icons-svelte/icons/BrandPaypal.svelte"
+import Mug from "tabler-icons-svelte/icons/Mug.svelte"
 import Shirt from "tabler-icons-svelte/icons/Shirt.svelte"
 import Mail from "tabler-icons-svelte/icons/Mail.svelte"
 import Heart from "tabler-icons-svelte/icons/Heart.svelte"
@@ -123,27 +124,27 @@ import Game from "$lib/Game.svelte"
 			</div>
 		</div>
 		<div class="contacts | flex-center padded">
-			<a class="contact" href="https://twitter.com/NStudiosus" target="_blank">
+			<a class="contact" href="https://twitter.com/NStudiosus" target="_blank" rel="noreferrer">
 				<BrandTwitter/>
 				<p>Twitter</p>
 			</a>
-			<a class="contact" href="https://www.facebook.com/nightingalestudiosus" target="_blank">
+			<a class="contact" href="https://www.facebook.com/nightingalestudiosus" target="_blank" rel="noreferrer">
 				<BrandFacebook/>
 				<p>Facebook</p>
 			</a>
-			<a class="contact" href="https://discord.gg/FbhyGGtgYn" target="_blank">
+			<a class="contact" href="https://discord.gg/FbhyGGtgYn" target="_blank" rel="noreferrer">
 				<BrandDiscord/>
 				<p>Discord</p>
 			</a>
-			<a class="contact" href="https://www.youtube.com/channel/UC4WhY6A6_quZvWPYkcp1FqA" target="_blank">
+			<a class="contact" href="https://www.youtube.com/channel/UC4WhY6A6_quZvWPYkcp1FqA" target="_blank" rel="noreferrer">
 				<BrandYoutube/>
 				<p>Youtube</p>
 			</a>
-			<a class="contact" href="mailto:ngstudiosus@gmail.com" target="_blank">
+			<a class="contact" href="mailto:ngstudiosus@gmail.com" target="_blank" rel="noreferrer">
 				<Mail/>
 				<p>Mail</p>
 			</a>
-			<a class="contact" href="https://www.redbubble.com/people/NStudios/explore" target="_blank">
+			<a class="contact" href="https://www.redbubble.com/people/NStudios/explore" target="_blank" rel="noreferrer">
 				<Shirt/>
 				<p>Merch</p>
 			</a>
@@ -158,7 +159,7 @@ import Game from "$lib/Game.svelte"
 			</div>
 		</div>
 		<div class="contacts | flex-center padded">
-			<a class="contact" href="https://www.patreon.com/Nightingale_studios" target="_blank">
+			<a class="contact" href="https://www.patreon.com/Nightingale_studios" target="_blank" rel="noreferrer">
 				<BrandPatreon/>
 				<p>Patreon</p>
 			</a>
@@ -172,6 +173,10 @@ import Game from "$lib/Game.svelte"
 					<p>PayPal</p>
 				</button>
 			</form>
+			<a class="contact" href="https://ko-fi.com/nightingalestudios" target="_blank" rel="noreferrer">
+				<Mug/>
+				<p>Ko-fi</p>
+			</a>
 		</div>
 	</section>
 </div>

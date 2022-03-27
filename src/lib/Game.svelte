@@ -53,7 +53,7 @@ $: isNarrow = width < 350
 		{#if linkEntries.length}
 			<div class="links">
 				{#each linkEntries as [name, url]}
-					<a class="link" href={url}>
+					<a class="link" href={url} target="_blank" rel="noreferrer">
 						<svelte:component this={brandIcons[name]} size={32}/>
 						<p>{brandNames[name]}</p>
 					</a>
